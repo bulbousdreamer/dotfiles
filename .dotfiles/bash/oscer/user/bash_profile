@@ -2,6 +2,5 @@ if ! test "${DOTFILES_DEBUG+define}"; then echo "Entering .dotfiles/bash/oscer/u
 
 module load git/2.36.0-GCCcore-11.3.0-nodocs.lua
 module load Miniconda3/4.4.10
-. /opt/oscer/software/Miniconda3/4.4.10/etc/profile.d/conda.sh
 
 if ! test "${DOTFILES_DEBUG+define}"; then echo "Leaving .dotfiles/bash/oscer/user/bash_profile"; fi
