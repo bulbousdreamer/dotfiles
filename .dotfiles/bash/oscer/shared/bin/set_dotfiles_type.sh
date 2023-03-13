@@ -15,7 +15,6 @@ if ! test "${DOTFILES_TYPE}"; then
                     # use empty files and avoid errors
                     DOTFILES_TYPE=template
                     ;;
-            esac
         *)
             # use empty files and avoid errors
             DOTFILES_TYPE=template

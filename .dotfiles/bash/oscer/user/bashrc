@@ -1,0 +1,3 @@
+if ! test "${DOTFILES_DEBUG+define}"; then echo "Entering .dotfiles/bash/oscer/user/bashrc"; fi
+
+if ! test "${DOTFILES_DEBUG+define}"; then echo "Leaving .dotfiles/bash/oscer/user/bashrc"; fi
