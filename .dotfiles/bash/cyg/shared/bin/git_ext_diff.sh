@@ -17,11 +17,11 @@ fi
 # If one of the files is /dev/null, use an empty file so bc4 does not error
 # TODO: Should there be more if statements to check filemode?
 if [ "${old_file}" == "/dev/null" ]; then
-    "${old_file}" = "${HOME}/.dotfiles/${DOTFILES_TYPE}/null_file"
+    "${old_file}" = "${DOTFILES_HOME}/.dotfiles/${DOTFILES_TYPE}/null_file"
 fi
 
 if [ "${new_file}" == "/dev/null" ]; then
-    "${new_file}" = "${HOME}/.dotfiles/${DOTFILES_TYPE}/null_file"
+    "${new_file}" = "${DOTFILES_HOME}/.dotfiles/${DOTFILES_TYPE}/null_file"
 fi
 
 # Open the GUI

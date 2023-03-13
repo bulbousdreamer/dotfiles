@@ -12,7 +12,7 @@ export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoreboth
 export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls' # Ignore the ls command as well
 #
 # Whenever displaying the prompt, write the previous line to disk
-export HISTFILE="${HOME}/.dotfiles/bash/${DOTFILES_TYPE}/bash_history"
+export HISTFILE="${DOTFILES_HOME}/.dotfiles/bash/${DOTFILES_TYPE}/bash_history"
 
 export HISTSIZE=5000
 
