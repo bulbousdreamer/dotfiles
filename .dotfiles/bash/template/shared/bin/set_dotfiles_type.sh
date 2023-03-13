@@ -2,20 +2,13 @@ if ! test "${DOTFILES_DEBUG+define}"; then echo "Entering .dotfiles/bash/templat
 
 if ! test "${DOTFILES_TYPE}"; then
   export DOTFILES_TYPE
-    case "$(uname -o)" in
-        Cygwin)
+    case "$(uname -o):$(hostname)" in
+        Cygwin:*)
             DOTFILES_TYPE=cyg
             ;;
-        GNU/Linux)
-            case "$(hostname)" in
-                *.oscer.ou.edu)
+        GNU/Linux:*oscer.ou.edu)
                     DOTFILES_TYPE=oscer
                     ;;
-                *)
-                    # use empty files and avoid errors
-                    DOTFILES_TYPE=template
-                    ;;
-            esac
         *)
             # use empty files and avoid errors
             DOTFILES_TYPE=template
