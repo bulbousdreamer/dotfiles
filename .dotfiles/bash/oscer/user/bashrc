@@ -1,3 +1,5 @@
 if ! test "${DOTFILES_DEBUG+define}"; then echo "Entering .dotfiles/bash/oscer/user/bashrc"; fi
 
+. /opt/oscer/software/Miniconda3/4.4.10/etc/profile.d/conda.sh
+
 if ! test "${DOTFILES_DEBUG+define}"; then echo "Leaving .dotfiles/bash/oscer/user/bashrc"; fi
