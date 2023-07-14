@@ -1,0 +1,3 @@
+[[ "${DOTFILES_DEBUG}" = "true" ]] && echo "Entering .dotfiles/bash/cygwin_laptop/user/bashrc"
+
+[[ "${DOTFILES_DEBUG}" = "true" ]] && echo "Leaving .dotfiles/bash/cygwin_laptop/user/bashrc"
