@@ -1,3 +1,3 @@
-[[ "${DOTFILES_DEBUG}" = "true" ]] && echo "Entering .dotfiles/bash/DOTFILES_OS_PLACEHOLDER/user/bashrc"
+[[ "${DOTFILES_DEBUG}" = "true" ]] && echo "Entering ${DOTFILES_HOME}/.dotfiles/bash/DOTFILES_OS_PLACEHOLDER/user/bashrc"
 
-[[ "${DOTFILES_DEBUG}" = "true" ]] && echo "Leaving .dotfiles/bash/DOTFILES_OS_PLACEHOLDER/user/bashrc"
+[[ "${DOTFILES_DEBUG}" = "true" ]] && echo "Leaving ${DOTFILES_HOME}/.dotfiles/bash/DOTFILES_OS_PLACEHOLDER/user/bashrc"
