@@ -1,5 +1,11 @@
 [[ "${DOTFILES_DEBUG}" = "true" ]] && echo "Entering ${DOTFILES_HOME}/.profile"
 
+export DOTFILES_HOME="${DOTFILES_HOME:="${HOME}"}"
+export DOTFILES_REPO="${DOTFILES_REPO:="${HOME}/git/dotfiles/.git"}"
+export DOTFILES_TYPE="${DOTFILES_TYPE:="$("${DOTFILES_HOME}/.dotfiles/bash/bin/shared/set_dotfiles_type.sh")"}"
+export DOTFILES_SHARED="${DOTFILES_SHARED:="true"}"
+export DOTFILES_USER="${DOTFILES_USER:="true"}"
+
 ##### Start modular profile #####
 profiles=()
 while IFS= read -d '' -r; do
