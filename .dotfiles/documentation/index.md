@@ -16,7 +16,7 @@ Different tasks performed in the same home directory would lead to mistakes such
 
 # How
 
-Use exepcted bash entry points such as .bash_profile so everything _just works_ without using changing symbolic links depending on which machine you are on like some other solutions need. This is taken from [Atlassian Dotfiles](https://www.atlassian.com/git/tutorials/dotfiles) tutorial.
+Use exepcted bash entry points such as .bash_profile so everything _just works_ without using changing symbolic links depending on which machine you are on like some other solutions need. This is taken from [Atlassian Dotfiles](https://www.atlassian.com/git/tutorials/dotfiles) tutorial. Attempt to use guidance from [Greg's Wiki](https://mywiki.wooledge.org/) for better practices.
 
 Use wrapper scripts so commands are common for the user and configuration files, but the background behavior is not. For example, to edit a text file in Cygwin a user may want to use Notepad++ but they may want to use gedit on Linux. The same is true for configuration files that are not easily moved to a different location such as .gitconfig. If "editor.sh" is used to open Notepad++ on Cygwin and gedit on Linux, both the user's habits and the configuration will be more portable. Another option may be to set a variable such as GIT_EDITOR.
 
