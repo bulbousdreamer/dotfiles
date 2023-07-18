@@ -32,10 +32,10 @@ export LANG=$(locale -uU)
 # exists.
 #
 # if running bash
-if [ -n "${BASH_VERSION}" ]; then
-  if [ -f "${HOME}/.bashrc" ]; then
-    source "${HOME}/.bashrc"
-  fi
-fi
+# if [ -n "${BASH_VERSION}" ]; then
+#   if [ -f "${HOME}/.bashrc" ]; then
+#     source "${HOME}/.bashrc"
+#   fi
+# fi
 
 [[ "${DOTFILES_DEBUG}" = "true" ]] && echo "Leaving ${DOTFILES_HOME}/.dotfiles/bash/cygwin_laptop/shared/profile"

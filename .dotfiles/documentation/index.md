@@ -34,6 +34,8 @@ Not all configuration files can be moved. For example, using a single .gitconfig
 
 .bash_profile, .bashrc, .profile - Expected entry points for bash process. Detect the environment and read the correct configuration. For example, .bash_profile will source the detected environment's shared then user bash_profile if they are enabled so that the user can modify any settings from the shared version such as shopt autocd. It will modify the PATH by prepending in this order: user environment, shared environment, user general, shared general. Finally, it will source .bashrc.
 
+profile.d, bash_profile.d, bashrc.d - folders containing small profiles such as one to configure history, one to configure prompt, one to configure path, etc. These files will be read by a section of code that is provded in the template. If a single file is preferred then ignore this functionality. Idea taken from [Ivan De Marino](https://github.com/detro/.bashrc.d).
+
 .dotfiles/bash - Separate different types of shells for portabilty and future expansion.
 
 template - Skeleton for a specific environment containing expected files to avoid errors. Go to that direcotry and run the command `template.sh <new environment folder name` to make a new OS. Use this as the default environment if the environment cannot be detected to avoid errors as they only contain print statements.
