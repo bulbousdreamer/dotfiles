@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 repos=()
 while IFS= read -d '' -r; do

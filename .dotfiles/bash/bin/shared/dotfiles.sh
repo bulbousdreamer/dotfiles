@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 git_dir="${DOTFILES_REPO}"
 dotfiles_dir="${DOTFILES_HOME}"
