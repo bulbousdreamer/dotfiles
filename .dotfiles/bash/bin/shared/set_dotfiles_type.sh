@@ -4,7 +4,7 @@ case "$(uname --operating-system 2>/dev/null ):$(domainname 2>/dev/null):$(hostn
         dotfiles_os_type="cygwin_laptop"
         ;;
     *:*:*)
-        dotfiles_os_type="template"
+        dotfiles_os_type="dotfiles_type_template"
         ;;
 esac
 
