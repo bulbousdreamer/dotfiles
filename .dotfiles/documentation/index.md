@@ -30,16 +30,24 @@ The dotfiles repository can be edited as a normal git repository. Clone, pull, c
 
 Not all configuration files can be moved. For example, using a single .gitconfig file will not work with different versions of git that may be installed on different systems. Other files have similar issues.
 
+Git worktree commands may fail if the directory where it is created is not accessible from all dotfiles types that try to access it. For example, if the worktree .git file says the gitdir is "C:/..." then a Linux machine will not be able to use that worktree.
+
 # Architecture
 
-.bash_profile, .bashrc, .profile - Expected entry points for bash process. Detect the environment and read the correct configuration. For example, .bash_profile will source the detected environment's shared then user bash_profile if they are enabled so that the user can modify any settings from the shared version such as shopt autocd. It will modify the PATH by prepending in this order: user environment, shared environment, user general, shared general. Finally, it will source .bashrc.
+.bash_profile, .bashrc, .profile - Expected entry points for bash process. Detect the environment and read the correct configuration. These will source all the other files to load the configuration.
 
-profile.d, bash_profile.d, bashrc.d - folders containing small profiles such as one to configure history, one to configure prompt, one to configure path, etc. These files will be read by a section of code that is provded in the template. If a single file is preferred then ignore this functionality. Idea taken from [Ivan De Marino](https://github.com/detro/.bashrc.d).
+load order - Profile, bash_profile, then bashrc. General then specific. Shared then user. This allows variables and settings to be set then modified. It also allows versions of scripts to be prioritized by prepending bin folders to the path in the aforementioned order.
+
+profile.d, bash_profile.d, bashrc.d - folders containing modular profiles such as one to configure history, one to configure prompt, one to configure path, etc. These files will be read by a section of code that is provded in the template. If a single file is preferred then ignore these folders and modify the singular bashrc etc. Idea taken from [Ivan De Marino](https://github.com/detro/.bashrc.d).
 
 .dotfiles/bash - Separate different types of shells for portabilty and future expansion.
 
-template - Skeleton for a specific environment containing expected files to avoid errors. Go to that direcotry and run the command `template.sh <new environment folder name` to make a new OS. Use this as the default environment if the environment cannot be detected to avoid errors as they only contain print statements.
+shared, user - Each type is broken up into a shared folder for configuration management to configure and a user folder for an individual user to configure. Their structures tend to mirror one another.
 
-storage - Add licenses or other files that are useful when something goes wrong or teleworking.
+bin - These folders hold files such as scripts that perform a task. They are added to the path variable so the files contained within should be available from the command line.
+
+dotfiles_type_template - Skeleton for a specific environment containing expected files to avoid errors. Go to that direcotry and run the command `./template.sh <new environment folder name` to make a new OS. Use this as the default environment if the environment cannot be detected to avoid errors as they only contain print statements.
+
+storage - Add licenses or other files that are useful when something goes wrong or working without network access.
 
 wiki - Create guides or take notes.
