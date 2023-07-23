@@ -51,3 +51,31 @@ dotfiles_type_template - Skeleton for a specific environment containing expected
 storage - Add licenses or other files that are useful when something goes wrong or working without network access.
 
 wiki - Create guides or take notes.
+
+# Variables 
+
+DOTFILES_HOME - work-tree of files such as .bash_profile. It is used in files such as dotfiles.sh as a checkout destination. This should be set to the user home (${HOME}) for use and to the work area repo for testing (e.g. ${HOME}/git/dotfiles).
+
+DOTFILES_REPO - Like DOTFILES-HOME but the git-dir instead of work-tree.
+
+DOTFILES_DEBUG - Debug flag to enable debug prints when entering and leaving a file.
+
+DOTFILES_SHARED - If true, read the configuration in the shared folders.
+
+DOTFILES_USER - If true, read the configuration in the user folders.
+
+DOTFILES_TYPE - The folder containing the specific setup for an environment.
+
+# Scripts
+
+dotfiles.sh - Run git commands with a specific git-dir and work-tree. Can also disable dangerous commands in .gitconfig under "[disabled]".
+
+set_dotfiles_type.sh - Set DOTFILES_TYPE variable based on uname, domainname, and hostname.
+
+show_dotfiles.sh - Print out the variables used in dotfiles architecture such as DOTFILES_REPO.
+
+template.sh - Copy the contents of the dotfiles_type_template to a new folder. Note that the developer needs to add this type to set_dotfiles_type.sh.
+
+# Types
+
+[cygwin_laptop](cygwin_laptop.md)
