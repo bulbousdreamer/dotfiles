@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-reminder that if new/old is null then the file name should come from old/new
 
 old_file="${1}"
 new_file="${2}"
