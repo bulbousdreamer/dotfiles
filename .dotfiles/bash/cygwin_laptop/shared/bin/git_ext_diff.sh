@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -x
-
 path="${1}"
 old_file="$(cygpath --mixed --absolute "${2}")"
 old_hex="${3}"
