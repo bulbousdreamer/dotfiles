@@ -15,3 +15,18 @@
 [disabled]
 	reset = true
 	clean = true
+[diff]
+        external = git_ext_diff.sh
+        trustExitCode = true
+        renames = true
+[merge]
+        ff = only
+        tool = git_ext_merge
+[mergetool "git_ext_merge"]
+        cmd = git_ext_merge.sh "${LOCAL}" "${REMOTE}" "${BASE}" "${MERGED}"
+        prompt = false
+        keepBackup = false
+[difftool "bc4report"]
+  cmd = git_ext_diff_report.sh "${LOCAL}" "${REMOTE}" "${DIFF_LOG_FOLDER}"
+  trustExitCode = true
+  renames = true
