@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-[[ -d "${DOTFILES_REPO}" ]]  || { printf "DOTFILES_REPO is set to \"%s\" which is not a directory." "${DOTFILES_REPO}"; exit 1; }
+[[ -e "${DOTFILES_REPO}" ]]  || { printf "DOTFILES_REPO is set to \"%s\" which is not a directory." "${DOTFILES_REPO}"; exit 1; }
 [[ -d "${DOTFILES_HOME}" ]]  || { printf "DOTFILES_HOME is set to \"%s\" which is not a directory." "${DOTFILES_HOME}"; exit 1; }
 
 git_dir="${DOTFILES_REPO}"
