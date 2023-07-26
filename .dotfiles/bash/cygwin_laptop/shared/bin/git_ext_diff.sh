@@ -34,8 +34,6 @@ fi
 
 # Open the GUI
 "C:/Program Files/Beyond Compare 4/BComp.exe" \
-    '/silent' \
-    '/solo' \
     "$(cygpath --mixed --absolute "${old_file}")" \
     "$(cygpath --mixed --absolute "${new_file}")"
 
