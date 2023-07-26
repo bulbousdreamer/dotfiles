@@ -4,7 +4,7 @@ reminder that if new/old is null then the file name should come from old/new
 old_file="${1}"
 new_file="${2}"
 report_folder="${3}"
-script_file="${DOTFILES_HOME}/.dotfiles/bash/${DOTFILES_TYPE}/shared/bin/bcdiff.txt"
+script_file="${DOTFILES_HOME}/.dotfiles/bash/${DOTFILES_TYPE}/shared/storage/bcdiff.txt"
 
 if [ "${old_file}" == "/dev/null" ]; then
     old_file="${DOTFILES_HOME}/.dotfiles/bash/${DOTFILES_TYPE}/shared/storage/null_file"
