@@ -2,8 +2,8 @@ export DOTFILES_DEBUG="true"
 
 [[ "${DOTFILES_DEBUG}" = "true" ]] && echo "Entering ${DOTFILES_HOME}/.bash_profile"
 
-export DOTFILES_HOME="${DOTFILES_HOME:="${HOME}"}"
-export DOTFILES_REPO="${DOTFILES_REPO:="${HOME}/git/dotfiles/.git"}"
+export DOTFILES_HOME="${DOTFILES_HOME:="$(cygpath --mixed --absolute "${HOME}")"}"
+export DOTFILES_REPO="${DOTFILES_REPO:="$(cygpath --mixed --absolute "${HOME}/git/dotfiles/.git")"}"
 export DOTFILES_TYPE="${DOTFILES_TYPE:="$("${DOTFILES_HOME}/.dotfiles/bash/shared/bin/set_dotfiles_type.sh")"}"
 export DOTFILES_SHARED="${DOTFILES_SHARED:="true"}"
 export DOTFILES_USER="${DOTFILES_USER:="true"}"
