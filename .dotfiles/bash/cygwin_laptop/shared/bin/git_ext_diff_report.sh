@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-old_file="${1}"
-new_file="${2}"
-report_folder="${3}"
-script_file="${DOTFILES_HOME}/.dotfiles/bash/${DOTFILES_TYPE}/shared/storage/bcdiff.txt"
+old_file="$(cygpath --mixed --absolute "${1}")"
+new_file="$(cygpath --mixed --absolute "${2}")"
+report_folder="$(cygpath --mixed --absolute "${3}")"
+script_file="$(cygpath --mixed --absolute "${DOTFILES_HOME}/.dotfiles/bash/${DOTFILES_TYPE}/shared/storage/bcdiff.txt")"
 
 if [ "${old_file}" == "/dev/null" ]; then
     old_file="${DOTFILES_HOME}/.dotfiles/bash/${DOTFILES_TYPE}/shared/storage/null_file"
