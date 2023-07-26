@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
+set -x
+
 path="${1}"
-old_file="${2}"
+old_file="$(cygpath --mixed --absolute "${2}")"
 old_hex="${3}"
 old_mode="${4}"
 new_file="${5}"
@@ -17,17 +19,25 @@ fi
 # If one of the files is /dev/null, use an empty file so bc4 does not error
 # TODO: Should there be more if statements to check filemode?
 if [ "${old_file}" == "/dev/null" ]; then
-    old_file="${DOTFILES_HOME}/.dotfiles/bash/${DOTFILES_TYPE}/shared/storage/null_file"
+    old_file="$(cygpath --mixed --absolute "${DOTFILES_HOME}/.dotfiles/bash/${DOTFILES_TYPE}/shared/storage/null_file")"
 fi
 
 if [ "${new_file}" == "/dev/null" ]; then
-    new_file="${DOTFILES_HOME}/.dotfiles/bash/${DOTFILES_TYPE}/shared/storage/null_file"
+    new_file="$(cygpath --mixed --absolute "${DOTFILES_HOME}/.dotfiles/bash/${DOTFILES_TYPE}/shared/storage/null_file")"
+fi
+
+if [ "${old_file}" == "//./NUL" ]; then
+    old_file="$(cygpath --mixed --absolute "${DOTFILES_HOME}/.dotfiles/bash/${DOTFILES_TYPE}/shared/storage/null_file")"
+fi
+
+if [ "${new_file}" == "//./NUL" ]; then
+    new_file="$(cygpath --mixed --absolute "${DOTFILES_HOME}/.dotfiles/bash/${DOTFILES_TYPE}/shared/storage/null_file")"
 fi
 
 # Open the GUI
-"$(cygpath --unix --absolute "C:/Program Files/Beyond Compare 4/BComp.exe")" \
-    /silent \
-    /solo \
+"C:/Program Files/Beyond Compare 4/BComp.exe" \
+    '/silent' \
+    '/solo' \
     "$(cygpath --mixed --absolute "${old_file}")" \
     "$(cygpath --mixed --absolute "${new_file}")"
 
