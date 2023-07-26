@@ -19,7 +19,7 @@ fi
 mkdir -p "${report_folder}"
 touch "${report_file}"
 "$(cygpath --unix --absolute "C:/Program Files/Beyond Compare 4/BCompare.exe")" \
-  @"(cygpath --mixed --absolute "${script_file}")" \
-  "(cygpath --mixed --absolute "${old_file}")" \
-  "(cygpath --mixed --absolute "${new_file}")" \
-  "(cygpath --mixed --absolute "${report_file}")"
+  @"$(cygpath --mixed --absolute "${script_file}")" \
+  "$(cygpath --mixed --absolute "${old_file}")" \
+  "$(cygpath --mixed --absolute "${new_file}")" \
+  "$(cygpath --mixed --absolute "${report_file}")"
