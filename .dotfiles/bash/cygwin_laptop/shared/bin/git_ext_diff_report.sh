@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+set -x
 old_file="$(cygpath --mixed --absolute "${1}")"
 new_file="$(cygpath --mixed --absolute "${2}")"
 report_folder="$(cygpath --mixed --absolute "${3}")"
