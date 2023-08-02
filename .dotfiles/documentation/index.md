@@ -32,6 +32,8 @@ Not all configuration files can be moved. For example, using a single .gitconfig
 
 Git worktree commands may fail if the directory where it is created is not accessible from all dotfiles types that try to access it. For example, if the worktree .git file says the gitdir is "C:/..." then a Linux machine will not be able to use that worktree.
 
+Balancing automation and poor design. For example, DOTFILES_DEBUG statements were initially hardcoded to not depend on a variable that could be set differently and print misleading information, but manually updating was tedious. Many users will want Git information on their PS1 prompt, but in the past adding a generic one caused errors in some dotfiles types. Some systems such as Git for Windows come with it and configure it automatically in `/etc/profile.d/git-prompt.sh`. Currently leaving it up to the specific dotfiles type to configure its own. Theoretically it just needs added to the appropriate bash_profile.d folder.
+
 # Architecture
 
 .bash_profile, .bashrc, .profile - Expected entry points for bash process. Detect the environment and read the correct configuration. These will source all the other files to load the configuration.
@@ -75,6 +77,10 @@ set_dotfiles_type.sh - Set DOTFILES_TYPE variable based on uname, domainname, an
 show_dotfiles.sh - Print out the variables used in dotfiles architecture such as DOTFILES_REPO.
 
 template.sh - Copy the contents of the dotfiles_type_template to a new folder. Note that the developer needs to add this type to set_dotfiles_type.sh.
+
+# Nested Repositories
+
+It is appealing to use a fancy prompt found on github. Not sure how best to do this. Maybe clone to the storage folder and add fancy_prompt.sh to bash_profile.d to source it? Submodule or subtree?
 
 # Types
 
