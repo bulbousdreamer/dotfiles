@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -u
+#!/usr/bin/env bash
 
 # export DIFF_LOG_FOLDER="${HOME}/logs/somedescription/$(date "+%Y%m%d%H%M%S%N")_${PWD##*/}" && git difftool --tool=bc4report somecommitorwhatever
 
