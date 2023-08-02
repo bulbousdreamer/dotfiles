@@ -46,7 +46,7 @@ shared, user - Each type is broken up into a shared folder for configuration man
 
 bin - These folders hold files such as scripts that perform a task. They are added to the path variable so the files contained within should be available from the command line.
 
-dotfiles_type_template - Skeleton for a specific environment containing expected files to avoid errors. Go to that direcotry and run the command `./template.sh <new environment folder name` to make a new OS. Use this as the default environment if the environment cannot be detected to avoid errors as they only contain print statements.
+dotfiles_type_template - Skeleton for a specific environment containing expected files to avoid errors. Go to that direcotry and run the command `./template.sh <new environment folder name` to make a new OS. Use this as the default environment if the environment cannot be detected to avoid errors as they only contain print statements. Recommend naming types after the output of uname, domainname, hostname which is what set_dotfiles_type.sh uses to detect the type. For example, currently detecting Cygwin would use cygwin_na_na where na is "not applicable".
 
 storage - Add licenses or other files that are useful when something goes wrong or working without network access.
 
@@ -56,7 +56,7 @@ wiki - Create guides or take notes.
 
 DOTFILES_HOME - work-tree of files such as .bash_profile. It is used in files such as dotfiles.sh as a checkout destination. This should be set to the user home (${HOME}) for use and to the work area repo for testing (e.g. ${HOME}/git/dotfiles).
 
-DOTFILES_REPO - Like DOTFILES-HOME but the git-dir instead of work-tree.
+DOTFILES_REPO - Like DOTFILES_HOME but the git-dir instead of work-tree.
 
 DOTFILES_DEBUG - Debug flag to enable debug prints when entering and leaving a file.
 
@@ -78,4 +78,4 @@ template.sh - Copy the contents of the dotfiles_type_template to a new folder. N
 
 # Types
 
-[cygwin_laptop](cygwin_laptop.md)
+[cygwin_na_na](cygwin_na_na.md)
