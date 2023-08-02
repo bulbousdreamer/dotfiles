@@ -46,7 +46,7 @@ shared, user - Each type is broken up into a shared folder for configuration man
 
 bin - These folders hold files such as scripts that perform a task. They are added to the path variable so the files contained within should be available from the command line.
 
-dotfiles_type_template - Skeleton for a specific environment containing expected files to avoid errors. Go to that direcotry and run the command `./template.sh <new environment folder name` to make a new OS. Use this as the default environment if the environment cannot be detected to avoid errors as they only contain print statements. Recommend naming types after the output of uname, domainname, hostname which is what set_dotfiles_type.sh uses to detect the type. For example, currently detecting Cygwin would use cygwin_na_na where na is "not applicable".
+dotfiles_type_template - Skeleton for a specific environment containing expected files to avoid errors. Go to that direcotry and run the command `./template.sh <new environment folder name` to make a new OS. Use this as the default environment if the environment cannot be detected to avoid errors as they only contain print statements. Recommend naming types after the output of uname, domainname, hostname which is what set_dotfiles_type.sh uses to detect the type. For example, currently detecting Cygwin would use cygwin_na_na where na is "not applicable". This script uses a case statement so order the types from specific to generic.
 
 storage - Add licenses or other files that are useful when something goes wrong or working without network access.
 
