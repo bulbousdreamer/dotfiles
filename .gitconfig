@@ -1,0 +1,41 @@
+[user]
+  name = Erin Hurt
+  email = 89059638+ehurt359@users.noreply.github.com
+[core]
+  autocrlf = false
+  fileMode = false
+  ignoreCase = false
+  editor = git_editor.sh
+[init]
+  defaultBranch = main
+[worktree]
+	useRelativePaths = true
+[extensions]
+	relativeWorktrees = true
+[alias]
+  lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+  lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+[fetch]
+  prune = true
+[disabled]
+  reset = true
+  clean = true
+[diff]
+  external = git_ext_diff.sh
+  trustExitCode = true
+  renames = true
+  prompt = false
+[difftool]
+  prompt = false
+[merge]
+  ff = only
+  tool = git_ext_merge
+[mergetool "git_ext_merge"]
+  cmd = git_ext_merge.sh "${LOCAL}" "${REMOTE}" "${BASE}" "${MERGED}"
+  prompt = false
+  keepBackup = false
+[difftool "bc4report"]
+  cmd = git_ext_diff_report.sh "${LOCAL}" "${REMOTE}" "${DIFF_LOG_FOLDER}"
+  trustExitCode = true
+  renames = true
+  prompt = false
